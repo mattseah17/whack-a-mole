@@ -4,14 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <title>Whack-a-Mole</title>
+    <title>Whack-a-Multiple</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
   </head>
   <body>
+    <h4 class="title">WHACK-A-MULTIPLE</h4>
     <h4 class="score">SCORE: <span>00</span></h4>
     <h4 class="timerText">TIMER:</h4>
     <span><p class="timer">1:00</p></body></span>
     <button class="startTimer">Start Game!</button>
+    <label for="multiples">Choose a multiple:</label>
+    <select name="multiples" id="multiples">
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+    </select>
     <div class="board">
       <div class="hole"></div>
       <div class="hole"></div>
