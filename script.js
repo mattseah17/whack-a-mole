@@ -8,45 +8,31 @@ const sound2 = new Audio("sounds/mixkit-retro-arcade-game-over-470.mp3");
 
 let score = 0;
 
-//Game run
 function runGame() {
-  const num = Math.ceil(Math.random() * 90);
   const i = Math.floor(Math.random() * holes.length);
   const hole = holes[i];
   let timer = null;
 
-  const imgDiv = document.createElement("div");
   const img = document.createElement("img");
-  const imgText = document.createElement("p");
-
-  imgDiv.className = "mole";
-  img.className = "mole";
-  imgText.className = "mole";
-  imgDiv.appendChild(img);
-  imgDiv.appendChild(imgText);
-  console.log(imgDiv);
-  
-  imgText.textContent = num;
-  console.log(imgText.textContent);
-
+  img.classList.add("mole");
   img.src = "images/diglett.png";
 
   img.addEventListener("click", () => {
     score += 2;
-    scoreEl.textContent = score;
     sound1.play();
+    scoreEl.textContent = score;
     img.src = "images/diglett-whacked.png";
     clearTimeout(timer);
     setTimeout(() => {
-      hole.removeChild(imgDiv);
+      hole.removeChild(img);
       runGame();
     }, 500);
   });
 
-  hole.appendChild(imgDiv);
+  hole.appendChild(img);
 
   timer = setTimeout(() => {
-    hole.removeChild(imgDiv);
+    hole.removeChild(img);
     runGame();
   }, 1500);
 }
@@ -61,6 +47,12 @@ document.querySelector(".board").addEventListener("mousedown", () => {
 });
 document.querySelector(".board").addEventListener("mouseup", () => {
   cursor.classList.remove("active");
+});
+//Start button click
+document.querySelector(".startTimer").addEventListener("click", () => {
+  document.querySelector("button").remove();
+  countdown();
+  runGame();
 });
 
 //Game timer
@@ -89,9 +81,6 @@ function countdown() {
   }
 }
 
-//Start button click
-document.querySelector(".startTimer").addEventListener("click", () => {
-  document.querySelector("button").remove();
-  countdown();
-  runGame();
-});
+
+
+
