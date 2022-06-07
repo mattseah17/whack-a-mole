@@ -9,32 +9,39 @@ const sound2 = new Audio("sounds/mixkit-retro-arcade-game-over-470.mp3");
 let score = 0;
 
 function runGame() {
+  const num = Math.ceil(Math.random() * 90);
   const i = Math.floor(Math.random() * holes.length);
   const hole = holes[i];
   let timer = null;
-
+  
+  const moleDiv = document.createElement("div");
+  moleDiv.classList.add("mole");
+  const moleText = document.createElement("div");
+  moleText.setAttribute("id", "moletext");
+  moleDiv.append(moleText);
   const img = document.createElement("img");
-  img.classList.add("mole");
-  img.src = "images/diglett.png";
-
-  img.addEventListener("click", () => {
+  moleDiv.append(img);
+  moleText.innerText = num;
+  
+  moleDiv.addEventListener("click", () => {
+    moleDiv.style.background = "none";
+    img.src = "images/diglett-whacked.png";
     score += 2;
     sound1.play();
     scoreEl.textContent = score;
-    img.src = "images/diglett-whacked.png";
     clearTimeout(timer);
     setTimeout(() => {
-      hole.removeChild(img);
+      hole.removeChild(moleDiv);
       runGame();
     }, 500);
   });
 
-  hole.appendChild(img);
+  hole.appendChild(moleDiv);
 
   timer = setTimeout(() => {
-    hole.removeChild(img);
+    hole.removeChild(moleDiv);
     runGame();
-  }, 1500);
+  }, 20000);
 }
 
 //Hammer cursor movement

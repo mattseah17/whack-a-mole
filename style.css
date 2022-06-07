@@ -122,8 +122,11 @@ label {
 }
 
 .hole .mole {
-  width: 100%;
+  background: url("images/diglett.png") bottom center no-repeat;
+  background-size: cover;
   position: absolute;
+  height: 100%;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
@@ -140,10 +143,21 @@ label {
   }
 }
 
-/* .moletext {
+#moletext {
   position: relative;
-  left: 73px;
-  bottom: 25px;
-  font-size: 70px;
+  width: 5em;
+  height: 5em;
+  left: 75px;
+  top: 105px;
+  font-size: 50px;
   color: black;
-} */
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  top: 5%;
+  left: 49%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
