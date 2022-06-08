@@ -13,9 +13,14 @@
     <h4 class="score">SCORE: <span>00</span></h4>
     <h4 class="timerText">TIMER:</h4>
     <span><p class="timer">1:00</p></body></span>
-    <button class="startTimer">Start Game!</button>
-    <label for="multiples">Choose a multiple:</label>
+    <br>
+    <br>
+    <h4 class="step-2">Step 2:</h4>
+    <button class="startTimer">Start Game!</button> 
+
+    <label for="multiples">Step 1: <br> Choose a multiple:</label>
     <select name="multiples" id="multiples">
+      <option value="null"></option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
@@ -25,6 +30,7 @@
       <option value="8">8</option>
       <option value="9">9</option>
     </select>
+
     <div class="board">
       <div class="hole"></div>
       <div class="hole"></div>
@@ -36,6 +42,7 @@
       <div class="hole"></div>
       <div class="hole"></div>
     </div>
+
     <div class="cursor"></div>
     <script src="script.js" charset="utf-8"></script>
   </body>
