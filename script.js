@@ -33,7 +33,7 @@ select.addEventListener("change", (e) => {
       const i = Math.floor(Math.random() * holes.length);
       const hole = holes[i];
       let timer = null;
-
+      
       const moleDiv = document.createElement("div");
       moleDiv.classList.add("mole");
       const moleText = document.createElement("div");
